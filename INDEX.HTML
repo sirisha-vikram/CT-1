@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <style>
+    body {
+      background: linear-gradient(to right, #41b8f0, #2a5298);
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+    }
+
+    .weather-icon {
+      width: 100px;
+      height: 100px;
+    }
+
+    #weatherResult h3, #weatherResult p {
+      margin-bottom: 0.5rem;
+    }
+
+    .spinner {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .list-group-item {
+      background-color: transparent;
+      border: 1px solid #555;
+      color:#fff;
+    }
+
+    .form-control {
+      background-color: #222;
+      border: 1px solid #555;
+      color: white;
+    }
+
+    .btn-primary {
+      background-color: #00ff99;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4"><i class="fas fa-cloud-sun"></i> Weather App</h1>
+    <div class="form-group">
+      <input
+        type="text"
+        id="cityInput"
+        class="form-control"
+        placeholder="Enter city (e.g. palasa,in)"
+      />
+      <button id="searchBtn" class="btn btn-primary mt-3 btn-block">Search</button>
+      <div class="spinner-border text-light spinner" role="status" id="loader">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+    <div id="weatherResult" class="mt-4">
+      <h4 class="mb-3">Today's Top Weather Picks</h4>
+    </div>
+
+    <hr class="bg-light"/>
+    <h5><i class="fas fa-history"></i> Search History</h5>
+    <ul id="historyList" class="list-group"></ul>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
 
